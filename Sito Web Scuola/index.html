@@ -811,12 +811,54 @@ header {
             background: var(--gradient-accent);
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 50px;
-        }
+        /* Allineamento orari segreteria */
+.orario-row {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+.giorni {
+    flex: 0 0 140px; /* Larghezza fissa per i giorni */
+    font-weight: 500;
+}
+
+.orari {
+    flex: 1;
+}
+
+.nota {
+    display: inline-block;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-left: 5px;
+}
+
+/* Footer grid a 3 colonne */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .orario-row {
+        flex-wrap: wrap;
+    }
+    .giorni {
+        flex-basis: 100%;
+        margin-bottom: 4px;
+    }
+}
 
         .footer-col h4 {
             font-size: 1.2rem;
@@ -886,6 +928,55 @@ header {
             gap: 15px;
             margin-bottom: 25px;
         }
+
+        /* Allineamento orari segreteria */
+.orario-row {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+.giorni {
+    flex: 0 0 140px; /* Larghezza fissa per i giorni */
+    font-weight: 500;
+}
+
+.orari {
+    flex: 1;
+}
+
+.nota {
+    display: inline-block;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-left: 5px;
+}
+
+/* Footer grid: ora 3 colonne */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* Responsive: su mobile diventa 1 colonna */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .orario-row {
+        flex-wrap: wrap;
+    }
+    .giorni {
+        flex-basis: 100%;
+        margin-bottom: 4px;
+    }
+}
 
         .social-icons a {
             display: flex;
@@ -1417,65 +1508,49 @@ header {
             </div>
         </section>
     </main>
+<!-- FOOTER AGGIORNATO (3 colonne) -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Colonna 1: Scuola e contatti -->
+            <div class="footer-col">
+                <h4>Polo Tecnico Professionale</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Viale Sasso Marconi, 89048 Siderno (RC)</p>
+                <p><i class="fas fa-phone-alt"></i> 0964 048031</p>
+                <p><i class="fas fa-envelope"></i> RCIS03100L@ISTRUZIONE.IT</p>
+                <p><i class="fas fa-envelope-open-text"></i> PEC: rcis03100l@pec.istruzione.it</p>
+                <p><i class="fas fa-globe"></i> www.iismarconisiderno.edu.it</p>
+                <p><i class="fas fa-user-tie"></i> Dirigente: Gaetano Pedullà</p>
+            </div>
 
-    <!-- FOOTER UPGRADED -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Colonna 1: Scuola e contatti -->
-                <div class="footer-col">
-                    <h4>Polo Tecnico Professionale</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Viale Sasso Marconi, 89048 Siderno (RC)</p>
-                    <p><i class="fas fa-phone-alt"></i> 0964 048031</p>
-                    <p><i class="fas fa-envelope"></i> RCIS03100L@ISTRUZIONE.IT</p>
-                    <p><i class="fas fa-envelope-open-text"></i> PEC: rcis03100l@pec.istruzione.it</p>
-                    <p><i class="fas fa-globe"></i> www.iismarconisiderno.edu.it</p>
-                    <p><i class="fas fa-user-tie"></i> Dirigente: Gaetano Pedullà</p>
+            <!-- Colonna 2: Orari segreteria (ordinari) -->
+            <div class="footer-col">
+                <h4>Orari Segreteria</h4>
+                <div class="orario-row">
+                    <span class="giorni">Lunedì - Venerdì</span>
+                    <span class="orari">08:30 - 13:30</span>
                 </div>
-
-                <!-- Colonna 2: Orari segreteria -->
-                <div class="footer-col">
-                    <h4>Orari Segreteria</h4>
-                    <p><strong>Lunedì - Venerdì</strong><br>08:30 - 13:30</p>
-                    <p><strong>Martedì e Giovedì</strong><br>15:00 - 17:00 (solo su appuntamento)</p>
-                    <p><strong>Apertura straordinaria</strong><br>Sabato 09:00 - 12:00 (periodo iscrizioni)</p>
+                <div class="orario-row">
+                    <span class="giorni">Martedì e Giovedì</span>
+                    <span class="orari">15:00 - 17:00 <span class="nota">(su appuntamento)</span></span>
                 </div>
-
-                <!-- Colonna 3: Link utili -->
-                <div class="footer-col">
-                    <h4>Link utili</h4>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy policy</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cookie policy</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Amministrazione trasparente</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Albo online</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Iscrizioni online</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Orientamento</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> PTOF</a></li>
-                    </ul>
-                </div>
-
-                <!-- Colonna 4: Social e Newsletter -->
-                <div class="footer-col">
-                    <h4>Seguici</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                    <p style="margin-top: 25px;"><strong>Newsletter</strong></p>
-                    <form style="display: flex; margin-top: 10px;">
-                        <input type="email" placeholder="La tua email" style="flex: 1; padding: 10px; border: none; border-radius: 5px 0 0 5px;">
-                        <button type="submit" style="background-color: var(--accent); border: none; padding: 10px 15px; border-radius: 0 5px 5px 0; cursor: pointer; font-weight: 600;"><i class="fas fa-paper-plane"></i></button>
-                    </form>
+                <div class="orario-row">
+                    <span class="giorni">Sabato (periodo iscrizioni)</span>
+                    <span class="orari">09:00 - 12:00</span>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 Polo Tecnico Professionale Marconi – Ipsia Art – Zanotti. Sito realizzato dagli studenti del progetto scolastico. Tutti i diritti riservati.
+
+            <!-- Colonna 3: Progetto Rai Marzo 2026 -->
+            <div class="footer-col">
+                <h4>Progetto Rai Marzo 2026</h4>
+                <p style="margin-bottom: 15px;">Un'iniziativa degli studenti per raccontare il territorio attraverso i borghi della Locride.</p>
             </div>
         </div>
-    </footer>
+        <div class="copyright">
+            &copy; 2026 Polo Tecnico Professionale Marconi – Ipsia Art – Zanotti. Tutti i diritti riservati.
+        </div>
+    </div>
+</footer>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -1571,20 +1646,20 @@ header {
         });
 
         var borghi = [
-            { nome: "Siderno", lat: 38.267, lng: 16.3, link: "borghi/siderno.html" },
-            { nome: "Locri", lat: 38.233, lng: 16.267, link: "borghi/locri.html" },
-            { nome: "Gioiosa Ionica", lat: 38.333, lng: 16.317, link: "borghi/gioiosa.html" },
+            //{ nome: "Siderno", lat: 38.267, lng: 16.3, link: "borghi/siderno.html" },
+            // { nome: "Locri", lat: 38.233, lng: 16.267, link: "borghi/locri.html" },
+            //{ nome: "Gioiosa Ionica", lat: 38.333, lng: 16.317, link: "borghi/gioiosa.html" },
             { nome: "Bianco", lat: 38.092, lng: 16.153, link: "borghi/bianco.html" },
-            { nome: "Stilo", lat: 38.476, lng: 16.468, link: "borghi/stilo.html" },
+            // { nome: "Stilo", lat: 38.476, lng: 16.468, link: "borghi/stilo.html" },
             { nome: "Brancaleone", lat: 38.0, lng: 16.1, link: "borghi/brancaleone.html" },
             { nome: "Caulonia", lat: 38.383, lng: 16.4, link: "borghi/caulonia.html" },
-            { nome: "Cimina", lat: 38.266, lng: 16.083, link: "borghi/cimina.html" },
+            // { nome: "Cimina", lat: 38.266, lng: 16.083, link: "borghi/cimina.html" },
             { nome: "Casignana (Villa Romana)", lat: 38.116, lng: 16.083, link: "borghi/casignana.html" },
-            { nome: "Riace", lat: 38.417, lng: 16.483, link: "borghi/riace.html" },
-            { nome: "Roccella Ionica", lat: 38.317, lng: 16.4, link: "borghi/roccella.html" },
-            { nome: "Samo", lat: 38.067, lng: 16.067, link: "borghi/samo.html" },
-            { nome: "San Luca", lat: 38.15, lng: 16.0, link: "borghi/sanluca.html" },
-            { nome: "Valle delle Grandi Pietre", lat: 38.217, lng: 16.05, link: "borghi/valle-grandi-pietre.html" }
+            // { nome: "Riace", lat: 38.417, lng: 16.483, link: "borghi/riace.html" },
+            // { nome: "Roccella Ionica", lat: 38.317, lng: 16.4, link: "borghi/roccella.html" },
+            // { nome: "Samo", lat: 38.067, lng: 16.067, link: "borghi/samo.html" },
+            // { nome: "San Luca", lat: 38.15, lng: 16.0, link: "borghi/sanluca.html" },
+            // { nome: "Valle delle Grandi Pietre", lat: 38.217, lng: 16.05, link: "borghi/valle-grandi-pietre.html" }
         ];
 
         borghi.forEach(function(borgo) {
