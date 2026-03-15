@@ -1,5 +1,6 @@
 # File di sistema macOS
 .DS_Store
+.DS_Store?
 .Spotlight-V100
 .Trashes
 
@@ -7,17 +8,23 @@
 Thumbs.db
 ehthumbs.db
 
-# Cartelle di editor di testo
+# Cartelle di editor di testo / IDE
 .vscode/
 .idea/
 *.sublime-*
 
-# File di log (se ne hai)
+# File di log
 *.log
 
-# Cartella node_modules (nel caso in futuro usassi npm)
+# Cartella node_modules (per eventuali sviluppi frontend futuri)
 node_modules/
 
 # File temporanei
 *.tmp
 *.temp
+
+# Esportazioni PDF (tipiche da appunti Markdown)
+*.pdf
+
+# Screenshot accidentali (utile quando si fanno capture per documentazione)
+Screenshot*.png
