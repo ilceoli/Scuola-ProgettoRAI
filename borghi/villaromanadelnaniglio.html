@@ -560,7 +560,20 @@
             }
 
             .content-section {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                direction: ltr !important;
+            }
+
+            .content-text {
+                order: 1;
+                padding: 0;
+            }
+
+            .content-image {
+                order: 2;
+                width: 100%;
             }
 
             .hero-borgo h2 {
