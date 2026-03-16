@@ -1081,7 +1081,7 @@ footer::before {
 
 @media (max-width: 768px) {
   .header-content {
-    padding: 12px 0;
+    padding: 20px 0;
   }
   
   .logo {
@@ -1108,8 +1108,8 @@ footer::before {
     flex-direction: column;
     background: var(--white);
     border-radius: 16px;
-    padding: 16px;
-    margin-top: 16px;
+    padding: 24px 20px;
+    margin-top: 10px;
     box-shadow: var(--shadow-lg);
     height: auto;
     gap: 8px;

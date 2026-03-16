@@ -100,27 +100,36 @@
             transition: padding var(--transition);
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform var(--transition);
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
         .logo h1 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             font-weight: 700;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            transition: transform var(--transition);
-        }
-
-        .logo h1:hover {
-            transform: translateX(5px);
+            line-height: 1.2;
         }
 
         .logo span {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             color: var(--text-light);
             display: block;
             font-weight: 400;
             letter-spacing: 0.3px;
-            margin-top: 2px;
+            margin-top: 1px;
         }
 
         .back-link a {
@@ -148,6 +157,12 @@
         section {
             padding: 100px 0;
             position: relative;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
         }
 
         section:nth-child(even) {
@@ -276,17 +291,13 @@
            ============================================ */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
             gap: 24px;
             margin-top: 40px;
         }
 
         .info-grid.contact-grid {
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-        }
-
-        .info-grid.contact-grid {
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
         }
 
         .info-card {
@@ -530,6 +541,28 @@
            RESPONSIVE
            ============================================ */
         @media (max-width: 768px) {
+            .header-content {
+                padding: 32px 0;
+            }
+
+            .logo {
+                gap: 8px;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            .logo h1 {
+                font-size: 1rem;
+            }
+
+            .logo span {
+                font-size: 0.6rem;
+                display: block;
+                opacity: 0.8;
+            }
+
             .content-section {
                 grid-template-columns: 1fr;
             }
@@ -548,21 +581,106 @@
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .logo h1 {
+                font-size: 0.8rem;
+                white-space: nowrap;
+            }
+
+            .logo span {
+                display: block;
+                font-size: 0.5rem;
+                opacity: 0.9;
+            }
+
+            .logo img {
+                height: 28px;
+            }
+
             .hero-borgo {
-                min-height: 300px;
+                min-height: 250px;
+                height: 40vh;
             }
 
             .hero-borgo h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+            }
+
+            .hero-borgo p {
+                font-size: 0.95rem;
+                line-height: 1.6;
             }
 
             .btn {
-                padding: 12px 24px;
-                font-size: 0.95rem;
+                padding: 10px 20px;
+                font-size: 0.9rem;
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+
+            .content-section {
+                gap: 25px;
+                margin-bottom: 40px;
+            }
+
+            .content-text h3 {
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+            }
+
+            .content-text p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .content-image {
+                height: 250px;
+                border-radius: 12px;
+            }
+
+            .info-grid, 
+            .info-grid.contact-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .info-card {
+                padding: 20px;
+            }
+
+            .info-card i {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                gap: 12px;
+                margin-top: 30px;
+            }
+
+            .gallery-item {
+                height: 180px;
+            }
+
+            .back-link a {
+                padding: 8px 24px;
+                font-size: 0.75rem;
+                gap: 5px;
+            }
+
+            .back-link i {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -572,8 +690,11 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <h1>Polo Tecnico Professionale</h1>
-                <span>Marconi · Ipsia Art · Zanotti — Siderno</span>
+                <img src="../images/logo.svg" alt="Logo Repubblica Italiana" />
+                <div>
+                    <h1>Polo Tecnico Professionale</h1>
+                    <span>Marconi · Ipsia Art · Zanotti — Siderno</span>
+                </div>
             </div>
             <div class="back-link">
                 <a href="../index.html#borghi"><i class="fas fa-arrow-left"></i> Torna alla mappa</a>
@@ -827,7 +948,7 @@
                     <div class="gallery-item"><img src="../images/locri/galleria/galleria-locri-14.jpg"
                             alt="Vista panoramica verso Gerace"></div>
                     <div class="gallery-item"><img src="../images/locri/galleria/galleria-locri-15.jpg" -->
-                            <!-- alt="Orizzonte del Mar Ionio"></div> -->
+                    <!-- alt="Orizzonte del Mar Ionio"></div> -->
                 </div>
             </div>
         </section>
@@ -921,6 +1042,17 @@
                 </div>
             </div>
         </footer>
+
+    <script>
+        // Gestione dello scroll: riporta in alto al ricaricamento della pagina
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+
+        window.addEventListener("load", function () {
+            window.scrollTo(0, 0);
+        });
+    </script>
 </body>
 
 </html>

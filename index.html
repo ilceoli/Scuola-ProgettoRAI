@@ -887,9 +887,13 @@
       history.scrollRestoration = "manual";
     }
 
-    // Forza la pagina a partire dall'alto dopo ogni caricamento
+    // Forza la pagina a partire dall'alto solo se non c'è un hash (es. #borghi) 
+    // o se la pagina viene ricaricata (Refresh)
     window.addEventListener("load", function () {
-      window.scrollTo(0, 0);
+      const isReload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+      if (isReload || !window.location.hash) {
+        window.scrollTo(0, 0);
+      }
     });
   </script>
 </body>
