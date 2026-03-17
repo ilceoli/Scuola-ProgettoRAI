@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="it">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brancaleone - Polo Tecnico Professionale Marconi</title>
+    <title>Monasterace - Kaulon - Polo Tecnico Professionale Marconi</title>
     <link rel="icon" type="image/webp" href="../images/logo-flavicon.webp">
     <!-- Google Fonts e Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,27 +101,36 @@
             transition: padding var(--transition);
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform var(--transition);
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
         .logo h1 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             font-weight: 700;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            transition: transform var(--transition);
-        }
-
-        .logo h1:hover {
-            transform: translateX(5px);
+            line-height: 1.2;
         }
 
         .logo span {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             color: var(--text-light);
             display: block;
             font-weight: 400;
             letter-spacing: 0.3px;
-            margin-top: 2px;
+            margin-top: 1px;
         }
 
         .back-link a {
@@ -148,6 +158,12 @@
         section {
             padding: 100px 0;
             position: relative;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
         }
 
         section:nth-child(even) {
@@ -276,13 +292,13 @@
            ============================================ */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
             gap: 24px;
             margin-top: 40px;
         }
 
         .info-grid.contact-grid {
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
         }
 
         .info-card {
@@ -526,8 +542,43 @@
            RESPONSIVE
            ============================================ */
         @media (max-width: 768px) {
+            .header-content {
+                padding: 32px 0;
+            }
+
+            .logo {
+                gap: 8px;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            .logo h1 {
+                font-size: 1rem;
+            }
+
+            .logo span {
+                font-size: 0.6rem;
+                display: block;
+                opacity: 0.8;
+            }
+
             .content-section {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                direction: ltr !important;
+            }
+
+            .content-text {
+                order: 1;
+                padding: 0;
+            }
+
+            .content-image {
+                order: 2;
+                width: 100%;
             }
 
             .hero-borgo h2 {
@@ -544,21 +595,106 @@
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .logo h1 {
+                font-size: 0.8rem;
+                white-space: nowrap;
+            }
+
+            .logo span {
+                display: block;
+                font-size: 0.5rem;
+                opacity: 0.9;
+            }
+
+            .logo img {
+                height: 28px;
+            }
+
             .hero-borgo {
-                min-height: 300px;
+                min-height: 250px;
+                height: 40vh;
             }
 
             .hero-borgo h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 12px;
+            }
+
+            .hero-borgo p {
+                font-size: 0.95rem;
+                line-height: 1.6;
             }
 
             .btn {
-                padding: 12px 24px;
-                font-size: 0.95rem;
+                padding: 10px 20px;
+                font-size: 0.9rem;
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+
+            .content-section {
+                gap: 25px;
+                margin-bottom: 40px;
+            }
+
+            .content-text h3 {
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+            }
+
+            .content-text p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .content-image {
+                height: 250px;
+                border-radius: 12px;
+            }
+
+            .info-grid, 
+            .info-grid.contact-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .info-card {
+                padding: 20px;
+            }
+
+            .info-card i {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                gap: 12px;
+                margin-top: 30px;
+            }
+
+            .gallery-item {
+                height: 180px;
+            }
+
+            .back-link a {
+                padding: 8px 24px;
+                font-size: 0.75rem;
+                gap: 5px;
+            }
+
+            .back-link i {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -568,8 +704,11 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <h1>Polo Tecnico Professionale</h1>
-                <span>Marconi · Ipsia Art · Zanotti — Siderno</span>
+                <img src="../images/logo.svg" alt="Logo Repubblica Italiana" />
+                <div>
+                    <h1>Polo Tecnico Professionale</h1>
+                    <span>Marconi · Ipsia Art · Zanotti — Siderno</span>
+                </div>
             </div>
             <div class="back-link">
                 <a href="../index.html#borghi"><i class="fas fa-arrow-left"></i> Torna alla mappa</a>
@@ -580,11 +719,11 @@
     <main>
         <!-- HERO SECTION -->
         <section class="hero-borgo"
-            style="background-image: url('../images/brancaleone/brancaleone-hero.jpg'); background-size: cover; background-position: center;">
+            style="background-image: url('../images/monasterace/kaulon-tempio.jpg'); background-size: cover; background-position: center;">
             <div class="hero-overlay"></div>
             <div class="container">
-                <h2>Brancaleone</h2>
-                <p>Città natale del celebre regista e attore. Spiagge dorate e tradizioni legate al mare.</p>
+                <h2>Monasterace - Kaulon</h2>
+                <p>Tra le onde dello Ionio e le pietre millenarie, l'antica colonia greca che custodisce il più grande mosaico ellenistico d'Italia.</p>
             </div>
         </section>
 
@@ -593,205 +732,171 @@
             <div class="container">
                 <div class="info-grid">
                     <div class="info-card">
-                        <i class="fas fa-mountain"></i>
-                        <h4>Altitudine</h4>
-                        <p>12 - 150 m s.l.m.</p>
+                        <i class="fas fa-calendar-alt"></i>
+                        <h4>Fondazione</h4>
+                        <p>VII secolo a.C.</p>
                     </div>
                     <div class="info-card">
-                        <i class="fas fa-users"></i>
-                        <h4>Abitanti</h4>
-                        <p>3.574</p>
+                        <i class="fas fa-columns"></i>
+                        <h4>Tempio Dorico</h4>
+                        <p>V secolo a.C.</p>
                     </div>
                     <div class="info-card">
-                        <i class="fas fa-map-pin"></i>
-                        <h4>Zona</h4>
-                        <p>Costa dei Gelsomini</p>
+                        <i class="fas fa-water"></i>
+                        <h4>Area Subacquea</h4>
+                        <p>Oltre 200 reperti</p>
                     </div>
                     <div class="info-card">
-                        <i class="fas fa-history"></i>
-                        <h4>Origini</h4>
-                        <p>VI-VII secolo d.C.</p>
+                        <i class="fas fa-mosaic"></i>
+                        <h4>Mosaico più grande</h4>
+                        <p>25 mq - Drago e Delfini</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- STORIA -->
+        <!-- DESCRIZIONE GENERALE -->
         <section>
             <div class="container">
-                <h2 class="section-title">La Storia di Brancaleone</h2>
+                <h2 class="section-title">Un Paesaggio Archeologico Straordinario</h2>
                 <div class="content-section">
                     <div class="content-text">
-                        <h3>Dalle Origini Bizantine</h3>
-                        <p>Brancaleone è una località di straordinaria bellezza naturalistica situata lungo la Costa dei
-                            Gelsomini, in Calabria. Le origini del borgo risalgono al VI-VII secolo, durante il periodo
-                            bizantino, anche se si ritiene che l'area fosse abitata già in epoche precedenti, come
-                            testimoniano tracce elleniche e romane.</p>
-                        <p>Proprio qui sorge oggi Brancaleone Superiore, un affascinante borgo medievale abbandonato a
-                            seguito dell'alluvione del 1953, ma ancora visitabile per i suoi suggestivi resti scavati
-                            nella roccia arenaria.</p>
+                        <h3>Kaulon, la città sul mare</h3>
+                        <p>Monasterace, situata lungo la splendida Costa dei Gelsomini, custodisce uno dei siti archeologici più importanti della Magna Grecia calabrese. Qui sorgevano le antiche mura di Kaulon, colonia greca fondata nel VII secolo a.C. che dominava il promontorio di Punta Stilo con il Mar Ionio davanti.</p>
+                        <p>Il borgo moderno di Monasterace si è sviluppato attorno a questo straordinario patrimonio, creando un connubio unico tra storia antica e vita contemporanea. Le sue strade accoglienti e i suoi panorami mozzafiato sul mare rendono questa località una meta imperdibile per gli amanti dell'archeologia e della cultura classica.</p>
                     </div>
                     <div class="content-image"
-                        style="background-image: url('../images/brancaleone/brancaleone-1.jpg');"></div>
-                </div>
-
-                <div class="content-section reverse">
-                    <div class="content-image"
-                        style="background-image: url('../images/brancaleone/brancaleone-vetus.jpg');">
-                    </div>
-                    <div class="content-text">
-                        <h3>Il Borgo Abbandonato</h3>
-                        <p>L'attuale Brancaleone Marina si sviluppa lungo la costa ionica per circa 10 chilometri, da
-                            Capo Spartivento fino alla Fiumara di Bruzzano. Il borgo era diviso in due zone principali:
-                            una vicino alla nuova chiesa dell'Annunziata (oggi Centro di Documentazione) e un'altra più
-                            a nord, dove sorgeva il nucleo abitato attorno all'antica chiesa protopapale arcipretale
-                            dell'Annunziata.</p>
-                        <p>Molte strutture del paese sono scavate o costruite direttamente nella roccia arenaria che
-                            circonda l'abitato, rendendo il luogo particolarmente suggestivo. Tra i resti spiccano
-                            incisioni armene e la grotta-chiesa dell'Albero della Vita.</p>
-                    </div>
+                        style="background-image: url('../images/monasterace/kaulon-panorama.jpg');"></div>
                 </div>
             </div>
         </section>
 
-        <!-- LUOGHI DA VISITARE -->
+        <!-- KAULON E IL TEMPIO DORICO -->
         <section style="background-color: white;">
             <div class="container">
-                <h2 class="section-title">Luoghi da Visitare</h2>
+                <h2 class="section-title">Kaulon e il Tempio Dorico</h2>
                 <div class="content-section">
                     <div class="content-image"
-                        style="background-image: url('../images/brancaleone/brancaleone-chiese.jpg');"></div>
+                        style="background-image: url('../images/monasterace/kaulon-tempio-dorico.jpg');"></div>
                     <div class="content-text">
-                        <h3>I Siti Archeologici</h3>
-                        <p>Tra i luoghi più interessanti dell'antico borgo si trovano:</p>
-                        <ul style="color: var(--text-light); margin-left: 20px; margin-bottom: 20px;">
-                            <li>La grotta-chiesa dell'Albero della Vita</li>
-                            <li>Il sito archeologico dei silos-granai, utilizzati per la conservazione dei cereali e
-                                dell'acqua</li>
-                            <li>La Grotta della Madonna del Riposo, con affreschi seicenteschi</li>
-                            <li>La Piazzetta del Ponte</li>
-                            <li>I resti dell'antica Chiesa dell'Annunziata di Brancaleone</li>
-                        </ul>
-                        <p>Il Museo del Mare di Brancaleone, in Via Napoli 16, racconta la storia marittima del paese
-                            e la sua forte connessione con il mare.</p>
+                        <h3>Il Tempio Dorico Periptero</h3>
+                        <p>Di particolare pregio sono i resti rinvenuti nell'area sacra dell'antica Kaulon, tra cui spicca un Tempio Dorico periptero risalente al V sec. a.C. Questo tempio rappresenta uno dei capolavori dell'architettura greca nella Calabria meridionale.</p>
+                        <p>Le colonne in pietra calcarea, alcune ancora in piedi, testimoniano l'elevato livello tecnico e artistico raggiunto dagli architetti kauloniti. L'orientamento del tempio verso il mare riflette la concezione cosmologica greca e la stretta connessione tra la città e il dio Poseidone.</p>
                     </div>
                 </div>
 
                 <div class="content-section reverse">
                     <div class="content-text">
-                        <h3>Cesare Pavese a Brancaleone</h3>
-                        <p>Nel 1935-36 lo scrittore Cesare Pavese fu confinato per otto mesi a Brancaleone per motivi
-                            politici. Qui scrisse il suo "Diario" e alcune poesie. La sua casa, situata nel centro
-                            storico, è oggi un museo visitabile su richiesta, arredata con oggetti originali dell'epoca.</p>
+                        <h3>Scavi e Restauro Continui</h3>
+                        <p>Gli scavi archeologici condotti nel corso del XX secolo hanno riportato alla luce gran parte della struttura del tempio e dell'area sacra circostante. Il restauro continuo permette di conservare questa preziosa testimonianza del passato classico.</p>
+                        <p>Oggi il tempio è visibile al pubblico e costituisce uno degli elementi più suggestivi del Parco Archeologico, con la sua imponente silhouette che si staglia contro il mare Ionio.</p>
                     </div>
                     <div class="content-image"
-                        style="background-image: url('../images/brancaleone/brancaleone-pavese.jpg');"></div>
+                        style="background-image: url('../images/monasterace/kaulon-scavi.jpg');"></div>
                 </div>
             </div>
         </section>
 
-        <!-- NATURA E TARTARUGHE -->
+        <!-- I DUE DRAGHI DI KAULON - MOSAICI -->
         <section>
             <div class="container">
-                <h2 class="section-title">Natura e Tartarughe Caretta-Caretta</h2>
+                <h2 class="section-title">I Due Draghi di Kaulon</h2>
                 <div class="content-section">
                     <div class="content-text">
-                        <h3>Protettori delle Tartarughe Marine</h3>
-                        <p>Brancaleone rappresenta uno dei luoghi più importanti della Calabria per la nidificazione
-                            della Caretta-Caretta. Ogni anno vengono individuati circa dieci nidi e, grazie all'attività
-                            dell'associazione Caretta Calabria Conservation, dal 2016 sono stati protetti oltre 130
-                            nidi, dai quali sono nati circa 6000 piccoli esemplari.</p>
-                        <p>Le spiagge di Brancaleone, con il loro mare limpido e sabbia fine e dorata, offrono l'habitat
-                            ideale per la deposizione delle uova. Il progetto di conservazione ha fatto di Brancaleone
-                            un punto di riferimento internazionale per la protezione di questa specie a rischio.</p>
+                        <h3>Il Mosaico della Casa Matta</h3>
+                        <p>Quello rinvenuto nel sito di Casa Matta non è l'unico drago di Kaulon. All'interno del parco, infatti, sono conservati i resti di un'antica abitazione di lusso che custodiva al suo interno un'opera musiva pavimentale raffigurante un drago marino, databile al III sec., ora conservata presso il Museo di Monasterace.</p>
+                        <p>È compresa nel Parco anche una vasta area archeologica subacquea che si estende tra il tempio dorico e l'attuale corso della fiumara Assi, con oltre 200 reperti recuperati dal fondale.</p>
                     </div>
                     <div class="content-image"
-                        style="background-image: url('../images/brancaleone/brancaleone-2.jpg');"></div>
+                        style="background-image: url('../images/monasterace/kaulon-mosaico-drago.jpg');"></div>
                 </div>
 
                 <div class="content-section reverse">
                     <div class="content-image"
-                        style="background-image: url('../images/brancaleone/brancaleone-1.jpg');"></div>
+                        style="background-image: url('../images/monasterace/kaulon-mosaico-drago-dettaglio.jpg');"></div>
                     <div class="content-text">
-                        <h3>Il Profumo dei Gelsomini</h3>
-                        <p>Per molti anni Brancaleone è stata conosciuta come la "città dei gelsomini". Questo fiore,
-                            insieme al Bergamotto di Reggio Calabria, è stato una delle coltivazioni più caratteristiche
-                            della regione e uno dei profumi più apprezzati grazie anche al lavoro della Stazione
-                            Sperimentale delle Essenze di Reggio Calabria.</p>
-                        <p>I fiori venivano raccolti all'alba dalle "gelsominaie" ed esportati soprattutto in Francia.
-                            Ancora oggi lunghi filari di gelsomini decorano il territorio e alcune antiche distillerie
-                            vengono custodite come preziose testimonianze della tradizione locale.</p>
+                        <h3>Il Mosaico Policromo di 25 mq</h3>
+                        <p>Il sito di Casa Matta custodisce un reperto di enorme valore storico-archeologico: un mosaico policromo di 25 mq di superficie raffigurante un drago, dei delfini e motivi floreali, ritenuto il più grande mosaico risalente all'epoca ellenistica mai ritrovato in Italia.</p>
+                        <p>Questo straordinario pavimento musivo dimostra la raffinatezza artistica e la ricchezza della società kaulonite, capace di commissionare opere di tale portata e bellezza.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- LA COSTA DEI GELSOMINI -->
+        <!-- IL MUSEO ARCHEOLOGICO -->
         <section style="background-color: white;">
             <div class="container">
-                <h2 class="section-title">La Costa dei Gelsomini</h2>
+                <h2 class="section-title">Il Museo Archeologico MAK</h2>
                 <div class="content-section">
                     <div class="content-image"
-                        style="background-image: url('../images/brancaleone/brancaleone-3.jpg');"></div>
+                        style="background-image: url('../images/monasterace/mak-museo.jpg');"></div>
                     <div class="content-text">
-                        <h3>Terra di Profumi e Tradizioni</h3>
-                        <p>La Costa dei Gelsomini, conosciuta anche come Locride, è una delle destinazioni più
-                            affascinanti della Calabria. Si estende lungo la costa ionica della Città metropolitana di
-                            Reggio Calabria, tra Punta Stilo e Capo Spartivento.</p>
-                        <p>Qui il mare cristallino, la storia millenaria e il profumo del gelsomino creano un'esperienza
-                            autentica e memorabile. Il nome "Costa dei Gelsomini" nasce dalla storica coltivazione del
-                            Gelsomino, diffusa lungo tutta la fascia costiera.</p>
+                        <h3>Conservazione e Valorizzazione</h3>
+                        <p>Ciò che è riaffiorato a seguito degli scavi e dal recupero subacqueo nell'area è conservato presso il Museo Archeologico di Monasterace Marina (MAK). Il museo ospita una collezione straordinaria di reperti che raccontano oltre mille anni di storia kaulonite.</p>
+                        <p>Dalle ceramiche greche alle monete bizantine, dai gioielli antichi ai mosaici policromi, ogni reperto contribuisce a ricostruire il quadro della vita quotidiana e della cultura di questa importante colonia greca.</p>
                     </div>
                 </div>
 
                 <div class="content-section reverse">
                     <div class="content-text">
-                        <h3>Le Gelsominaie e l'Oro Liquido</h3>
-                        <p>I fiori del gelsomino venivano raccolti dalle "gelsominaie", donne che all'alba raccoglievano
-                            i delicati boccioli destinati all'industria dei profumi. Questi preziosi fiori venivano
-                            esportati soprattutto in Francia, patria della profumeria, contribuendo a rendere la zona un
-                            punto di riferimento internazionale per le essenze naturali.</p>
-                        <p>Brancaleone, con i suoi 10 chilometri di costa, rappresenta il cuore pulsante di questa
-                            tradizione olfattiva che ha reso celebre l'intera regione.</p>
+                        <h3>Itinerari Espositivi</h3>
+                        <p>Il museo propone itinerari espositivi che accompagnano il visitatore attraverso le diverse epoche storiche di Kaulon, dall'età arcaica fino al periodo romano. Le sale espositive sono illuminate in modo da valorizzare al massimo i materiali esposti e creare un'atmosfera suggestiva.</p>
                     </div>
                     <div class="content-image"
-                        style="background-image: url('../images/brancaleone/brancaleone-gelsomini.jpg');">
+                        style="background-image: url('../images/monasterace/mak-interno.jpg');"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESCURSIONI E TREKKING ARCHEOLOGICO -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">Escursioni e Trekking Archeologico</h2>
+                <div class="content-section">
+                    <div class="content-text">
+                        <h3>Percorsi Guidati nel Parco</h3>
+                        <p>Il Parco Archeologico di Kaulon offre percorsi guidati che permettono di scoprire tutti i segreti dell'antica città greca. Esperti archeologi accompagnano i visitatori attraverso i resti delle mura, le fondazioni del tempio e le aree residenziali.</p>
+                        <p>I percorsi si snodano tra ulivi secolari e profumi mediterranei, creando un'esperienza sensoriale unica che unisce storia e natura.</p>
+                    </div>
+                    <div class="content-image"
+                        style="background-image: url('../images/monasterace/kaulon-escursione.jpg');"></div>
+                </div>
+
+                <div class="content-section reverse">
+                    <div class="content-image"
+                        style="background-image: url('../images/monasterace/kaulon-area-subacquea.jpg');"></div>
+                    <div class="content-text">
+                        <h3>Area Subacquea e Reperti</h3>
+                        <p>Il percorso comprende anche la visita all'area subacquea con oltre 200 reperti recuperati dal fondo marino. Questi oggetti raccontano la storia di una città che per secoli ha dominato il commercio marittimo della costa ionica.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TRADIZIONI E CULTURA -->
+        <!-- TRADIZIONI E LEGGENDE LOCALI -->
         <section style="background-color: white;">
             <div class="container">
-                <h2 class="section-title">Tradizioni e Cultura</h2>
+                <h2 class="section-title">Tradizioni e Leggende Locali</h2>
                 <div class="tradizioni-grid">
                     <div class="tradizione-card">
-                        <i class="fas fa-fish"></i>
-                        <h4>Pesca e Mare</h4>
-                        <p>Brancaleone è profondamente legata al mare. La tradizione della pesca artigianale, la cucina
-                            a base di pesce fresco e le feste marineristiche rendono il paese unico nella sua identità
-                            costiera.</p>
+                        <i class="fas fa-archway"></i>
+                        <h4>Il Mito di Kaulon</h4>
+                        <p>Secondo la tradizione, Kaulon deve il suo nome al mitico fondatore Kaulos, figlio di un re locale. La città divenne famosa per il suo tempio dedicato a Poseidone, dio del mare, che proteggeva i naviganti e i pescatori della zona.</p>
                     </div>
                     <div class="tradizione-card">
-                        <i class="fas fa-star"></i>
-                        <h4>Notte delle Stelle</h4>
-                        <p>Ogni estate, quando il cielo è particolarmente limpido, si organizzano osservazioni
-                            astronomiche lungo il lungomare. L'assenza di inquinamento luminoso rende Brancaleone ideale
-                            per ammirare la Via Lattea.</p>
+                        <i class="fas fa-mosaic"></i>
+                        <h4>L'Arte dei Mosaici</h4>
+                        <p>La tradizione della ceramica e dei mosaici di Monasterace si tramanda ancora oggi attraverso artigiani locali che utilizzano tecniche antiche per creare opere uniche ispirate ai capolavori kauloniti.</p>
                     </div>
                     <div class="tradizione-card">
-                        <i class="fas fa-leaf"></i>
-                        <h4>Gelsomini e Profumi</h4>
-                        <p>La raccolta dei gelsomini, avvenuta tradizionalmente all'alba, è ancora celebrata con piccole
-                            mostre e degustazioni di prodotti derivati da questo prezioso fiore che profuma tutto il
-                            territorio.</p>
+                        <i class="fas fa-church"></i>
+                        <h4>La Benedizione del Mare</h4>
+                        <p>Ogni anno, durante la festa patronale, la comunità di Monasterace celebra la benedizione del mare, un rituale che ricorda l'antica devozione verso Poseidone e la protezione divina sulle acque.</p>
                     </div>
                     <div class="tradizione-card">
-                        <i class="fas fa-paw"></i>
-                        <h4>Tartarughe Marine</h4>
-                        <p>Il progetto di salvaguardia delle Caretta-Caretta coinvolge tutta la comunità. Ogni anno
-                            volontari e turisti partecipano alle attività di monitoraggio e protezione dei nidi.</p>
+                        <i class="fas fa-book"></i>
+                        <h4>Corrado Alvaro e Kaulon</h4>
+                        <p>Lo scrittore calabrese Corrado Alvaro rimase affascinato dalla bellezza di Monasterace e dalle sue rovine antiche, definendola "una finestra sul passato classico" e contribuendo a far conoscere questa meraviglia archeologica a livello internazionale.</p>
                     </div>
                 </div>
             </div>
@@ -802,18 +907,12 @@
             <div class="container">
                 <h2 class="section-title">Galleria Fotografica</h2>
                 <div class="gallery">
-                    <div class="gallery-item"><img src="../images/brancaleone/galleria/galleria-brancaleone-1.jpg"
-                            alt="Brancaleone galleria 1"></div>
-                    <div class="gallery-item"><img src="../images/brancaleone/galleria/galleria-brancaleone-2.jpg"
-                            alt="Brancaleone galleria 2"></div>
-                    <div class="gallery-item"><img src="../images/brancaleone/galleria/galleria-brancaleone-3.jpg"
-                            alt="Brancaleone galleria 3"></div>
-                    <div class="gallery-item"><img src="../images/brancaleone/galleria/galleria-brancaleone-4.jpg"
-                            alt="Brancaleone galleria 4"></div>
-                    <div class="gallery-item"><img src="../images/brancaleone/galleria/galleria-brancaleone-5.jpg"
-                            alt="Brancaleone galleria 5"></div>
-                    <div class="gallery-item"><img src="../images/brancaleone/galleria/galleria-brancaleone-6.jpg"
-                            alt="Brancaleone galleria 6"></div>
+                    <div class="gallery-item"><img src="../images/monasterace/kaulon-tempio-dorico.jpg" alt="Tempio Dorico di Kaulon"></div>
+                    <div class="gallery-item"><img src="../images/monasterace/kaulon-mosaico-drago.jpg" alt="Mosaico del Drago"></div>
+                    <div class="gallery-item"><img src="../images/monasterace/mak-museo.jpg" alt="Museo Archeologico MAK"></div>
+                    <div class="gallery-item"><img src="../images/monasterace/kaulon-panorama.jpg" alt="Panorama da Punta Stilo"></div>
+                    <div class="gallery-item"><img src="../images/monasterace/kaulon-mura.jpg" alt="Resti delle mura antiche"></div>
+                    <div class="gallery-item"><img src="../images/monasterace/kaulon-area-subacquea.jpg" alt="Area subacquea e reperti"></div>
                 </div>
             </div>
         </section>
@@ -826,59 +925,47 @@
                     <div class="info-card">
                         <i class="fas fa-car"></i>
                         <h4>Come Arrivare</h4>
-                        <p>
-                            <strong>In Auto</strong><br>
-                            SS106 Jonica, uscita Brancaleone<br>
-                            Dista circa 25 km da Siderno e 60 km da Reggio Calabria<br>
-                            Parcheggio gratuito lungo il lungomare<br><br>
-                            <strong>In Pullman</strong><br>
-                            Autolinee Federico da Reggio Calabria e Siderno<br>
-                            Fermata: Piazza Municipio
+                        <p><strong>In Auto:</strong> SS106 Jonica, uscita Monasterace. Proseguire verso il mare seguendo le indicazioni per il Parco Archeologico di Kaulon.<br>
+                        Dista circa 35 km da Siderno e 80 km da Reggio Calabria.<br>
+                        Parcheggio gratuito disponibile nei pressi del Museo.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-globe"></i>
+                        <h4>Comune e Informazioni</h4>
+                        <p><strong>Comune di Monasterace</strong><br>
+                            Piazza C. Placanica<br>
+                            89040 Monasterace (RC)<br>
+                            <strong>Tel:</strong> 0964 739025<br>
+                            <strong>Email:</strong> <a href="mailto:amministrativo@comune.monasterace.rc.it"
+                                style="color: var(--text-light); text-decoration: none;">amministrativo@comune.monasterace.rc.it</a><br>
+                            <strong>PEC:</strong> protocollo.monasterace@asmepec.it<br>
+                            <strong>Sito web:</strong> <a href="https://www.comune.monasterace.rc.it" target="_blank"
+                                style="color: var(--accent); text-decoration: none; font-weight: 600;">www.comune.monasterace.rc.it</a>
                         </p>
                     </div>
+
                     <div class="info-card">
                         <i class="fas fa-landmark"></i>
-                        <h4>Comune e Informazioni</h4>
-                        <p>
-                            <strong>Comune di Brancaleone</strong><br>
-                            Via Regina Margherita, 2<br>
-                            89040 Brancaleone (RC)<br>
-                            Tel: 0964 933008<br>
-                            Fax: 0964 934065<br>
-                            Pec: <a href="mailto:protocollo.brancaleone@asmepec.it"
-                                style="color: var(--text-light); text-decoration: none;">protocollo.brancaleone@asmepec.it</a><br>
-                            Sito web: <a href="https://www.comune.brancaleone.rc.it" target="_blank"
-                                style="color: var(--accent); text-decoration: none; font-weight: 600;">www.comune.brancaleone.rc.it</a><br>
-                            Sindaco: Silvestro Garoffolo
+                        <h4>Parco Archeologico e Museo MAK</h4>
+                        <p><strong>Museo e Parco Archeologico dell'Antica Kaulon (MAK)</strong><br>
+                            Strada Statale 106 Ionica, 89040 Monasterace Marina (RC)<br>
+                            <strong>Orari:</strong> Mar-Dom 9:00-20:00, Lunedì chiuso<br>
+                            <strong>Tel:</strong> 0964 735154<br>
+                            <strong>Email:</strong> <a href="mailto:drm-cal.kauolon@cultura.gov.it"
+                                style="color: var(--text-light); text-decoration: none;">drm-cal.kauolon@cultura.gov.it</a><br>
                         </p>
                     </div>
+
                     <div class="info-card">
                         <i class="fas fa-train"></i>
                         <h4>Trasporti</h4>
-                        <p>
-                            <strong>Stazione Ferroviaria</strong><br>
-                            Stazione di Brancaleone<br>
-                            Linea Jonica Reggio Calabria-Taranto<br><br>
-                            <strong>Trasporto Locale</strong><br>
-                            Servizio taxi disponibile<br>
-                            Noleggio biciclette lungo il lungomare<br>
-                            Minibus turistici in alta stagione
-                        </p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-paw"></i>
-                        <h4>Tartarughe e Mare</h4>
-                        <p>
-                            <strong>Caretta Calabria Conservation</strong><br>
-                            Sede: Stazione Ferroviaria di Capo Spartivento, Palizzi<br>
-                            Tel: +39 327 047 6383<br>
-                            Email: <a href="mailto:info@carettacalabriaconservation.org"
-                                style="color: var(--text-light); text-decoration: none;">info@carettacalabriaconservation.org</a><br>
-                            Sito: <a href="http://carettacalabriaconservation.org/" target="_blank"
-                                style="color: var(--accent); text-decoration: none; font-weight: 600;">www.carettacalabriaconservation.org</a><br><br>
-                            <strong>Spiagge</strong><br>
-                            10 km di costa con sabbia dorata<br>
-                            Acqua cristallina, ideale per nidificazione
+                        <p><strong>Stazione Ferroviaria di Monasterache</strong><br>
+                            Linea Jonica Reggio Calabria-Taranto<br>
+                            Collegamenti frequenti con Reggio Calabria e Siderno<br>
+                            <br>
+                            <strong>Trasporto Locale:</strong> Autolinee da Reggio Calabria e Siderno<br>
+                            Servizio taxi disponibile
                         </p>
                     </div>
                 </div>
@@ -888,21 +975,33 @@
                 </div>
             </div>
         </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <p><a href="../index.html#borghi">← Torna alla mappa dei borghi</a> | <a
+                            href="../index.html">Home</a></p>
+                    <p>&copy; 2026 Polo Tecnico Professionale Marconi – Ipsia Art – Zanotti. Tutti i diritti riservati.
+                    </p>
+                </div>
+                <div class="copyright">
+                    Sito realizzato dagli studenti del progetto scolastico
+                </div>
+            </div>
+        </footer>
     </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p><a href="../index.html#borghi">← Torna alla mappa dei borghi</a> | <a href="../index.html">Home</a>
-                </p>
-                <p>&copy; 2026 Polo Tecnico Professionale Marconi – Ipsia Art – Zanotti. Tutti i diritti riservati.</p>
-            </div>
-            <div class="copyright">
-                Sito realizzato dagli studenti del progetto scolastico
-            </div>
-        </div>
-    </footer>
+    <script>
+        // Gestione dello scroll: riporta in alto al ricaricamento della pagina
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+
+        window.addEventListener("load", function () {
+            window.scrollTo(0, 0);
+        });
+    </script>
 </body>
 
 </html>
